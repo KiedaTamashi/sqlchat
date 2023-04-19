@@ -20,11 +20,11 @@ const handler = async (req: NextRequest) => {
   const res = await fetch(apiEndpoint, {
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${apiKey}`,
+      // Authorization: `Bearer ${apiKey}`,
+      "api-key": `${apiKey}`,
     },
     method: "POST",
     body: JSON.stringify({
-      model: "gpt-3.5-turbo",
       messages: reqBody.messages,
       temperature: 0,
       frequency_penalty: 0.0,
